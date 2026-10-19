@@ -1,6 +1,6 @@
 # Vendas Dominion
 
-PWA que envia push no iPhone a cada venda da Gestlink.
+PWA que envia push no iPhone a cada venda da Lastlink.
 
 ## Deploy (Vercel)
 1. Suba este repositório e importe na Vercel.
@@ -11,6 +11,6 @@ PWA que envia push no iPhone a cada venda da Gestlink.
 ## iPhone
 Safari → abrir o site → Compartilhar → Adicionar à Tela de Início → abrir pelo ícone → **Ativar notificações** → **Enviar teste**.
 
-## Gestlink
+## Lastlink
 Webhook de venda aprovada apontando para:
 `https://SEU-DOMINIO.vercel.app/api/webhook?token=WEBHOOK_SECRET`

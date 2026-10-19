@@ -1,6 +1,6 @@
 import { sendToAll } from "@/lib/push";
 
-// Procura um valor monetário em campos comuns do payload (a Gestlink pode variar o formato).
+// Procura um valor monetário em campos comuns do payload (a Lastlink pode variar o formato).
 function findAmount(data: unknown): string | null {
   const keys = ["amount", "value", "valor", "total", "price", "preco", "valor_total"];
   const walk = (o: unknown, depth = 0): unknown => {
@@ -31,7 +31,7 @@ async function handle(req: Request) {
   const amount = findAmount(data);
   const sent = await sendToAll({
     title: "Nova venda Dominion",
-    body: amount ?? "Venda confirmada na Gestlink",
+    body: amount ?? "Venda confirmada na Lastlink",
   });
   return Response.json({ ok: true, sent });
 }
