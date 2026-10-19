@@ -6,7 +6,7 @@ self.addEventListener("push", (event) => {
   try {
     data = event.data ? event.data.json() : {};
   } catch {}
-  const title = data.title || "Nova venda Dominion";
+  const title = data.title || "Nova Venda Confirmada";
   event.waitUntil(
     self.registration.showNotification(title, {
       body: data.body || "",

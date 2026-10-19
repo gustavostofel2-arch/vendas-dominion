@@ -64,7 +64,8 @@ export default function Home() {
     setMsg("");
     try {
       const res = await fetch("/api/test", { method: "POST" });
-      setMsg(res.ok ? "Teste enviado" : "Falha ao enviar teste");
+      const j = await res.json().catch(() => ({}));
+      setMsg(res.ok ? `Teste enviado (${j.sent ?? 0} aparelho)` : `Falha: ${j.error ?? res.status}`);
     } finally {
       setBusy(false);
     }

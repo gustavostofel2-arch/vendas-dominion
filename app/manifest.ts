@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Vendas Dominion",
+    name: "Dominion",
     short_name: "Dominion",
     description: "Notificações de vendas Dominion",
     start_url: "/",
