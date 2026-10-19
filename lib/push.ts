@@ -45,3 +45,7 @@ export async function claim(key: string, ttl: number) {
   const res = await redis().set(`claim:${key}`, "1", { nx: true, ex: ttl });
   return res === "OK";
 }
+
+export async function clearSubscriptions() {
+  await redis().del(KEY);
+}
