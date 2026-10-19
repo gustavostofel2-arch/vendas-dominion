@@ -15,9 +15,10 @@ export async function saveSubscription(sub: webpush.PushSubscription) {
 }
 
 export async function sendToAll(payload: { title: string; body: string; tag?: string }) {
-  const subject = process.env.VAPID_SUBJECT;
-  const pub = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
-  const priv = process.env.VAPID_PRIVATE_KEY;
+  const rawSubject = process.env.VAPID_SUBJECT?.trim();
+  const subject = rawSubject && !/^(mailto:|https?:)/.test(rawSubject) ? `mailto:${rawSubject}` : rawSubject;
+  const pub = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY?.trim();
+  const priv = process.env.VAPID_PRIVATE_KEY?.trim();
   if (!subject || !pub || !priv) throw new Error("VAPID não configurado");
   webpush.setVapidDetails(subject, pub, priv);
 
