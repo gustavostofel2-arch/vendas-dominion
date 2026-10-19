@@ -39,3 +39,9 @@ export async function sendToAll(payload: { title: string; body: string; tag?: st
   );
   return sent;
 }
+
+// Retorna true se esta chave ainda não foi usada nos últimos `ttl` segundos (e já a reserva).
+export async function claim(key: string, ttl: number) {
+  const res = await redis().set(`claim:${key}`, "1", { nx: true, ex: ttl });
+  return res === "OK";
+}
