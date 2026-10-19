@@ -1,4 +1,4 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
+﻿* { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
 body {
   background: #0a0a0a;
@@ -16,7 +16,7 @@ main {
   padding: 24px 16px;
   text-align: center;
 }
-.logo { width: 112px; height: 112px; border-radius: 24px; border: 2px solid #c0c0c0; padding: 14px; background: #000; }
+.logo { width: 112px; height: 112px; border-radius: 24px; }
 h1 { font-size: 22px; letter-spacing: 3px; text-transform: uppercase; color: #e8e8e8; }
 p { font-size: 14px; color: #8a8a8a; max-width: 320px; line-height: 1.5; }
 button {
@@ -35,3 +35,4 @@ button {
 button:disabled { opacity: .5; }
 .status { font-size: 13px; color: #c0c0c0; min-height: 18px; }
 .ok { color: #9be39b; }
+
