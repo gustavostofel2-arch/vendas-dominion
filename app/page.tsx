@@ -75,7 +75,7 @@ export default function Home() {
     <main>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img className="logo" src="/icon.png" alt="Dominion" />
-      <h1>Vendas Dominion</h1>
+      <h1>Dominion</h1>
 
       {state === "loading" && <p>Carregando…</p>}
       {state === "needs-install" && (

@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Vendas Dominion",
+  title: "Dominion",
   description: "Notificações de vendas Dominion",
   icons: { icon: "/icon-192.png", apple: "/icon-180.png" },
   appleWebApp: { capable: true, title: "Dominion", statusBarStyle: "black-translucent" },

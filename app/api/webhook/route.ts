@@ -7,7 +7,7 @@ async function handle(req: Request) {
     return Response.json({ error: "unauthorized" }, { status: 401 });
   }
   try {
-    const sent = await sendToAll({ title: "Nova Venda Confirmada", body: "" });
+    const sent = await sendToAll({ title: "Dominion", body: "Nova venda confirmada!" });
     return Response.json({ ok: true, sent });
   } catch (e) {
     return Response.json({ ok: false, error: e instanceof Error ? e.message : String(e) }, { status: 500 });
